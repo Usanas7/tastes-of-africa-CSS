@@ -1,0 +1,99 @@
+name: Tastes of Africa CSS Autograding
+on: [push, workflow_dispatch]
+
+permissions:
+  checks: write
+  contents: read
+
+jobs:
+  css-autograding:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # --- CSS VALIDATION CHECKS ---
+      - name: Verify CSS file exists
+        uses: classroom-resources/autograding-io-grader@v1
+        id: css-exists
+        with:
+          test-name: "CSS File Exists"
+          command: |
+            [ -f styles.css ] || exit 1
+          comparison-method: exact
+          expected-output: ""
+          timeout: 5
+
+      - name: Check Google Fonts integration
+        uses: classroom-resources/autograding-io-grader@v1
+        id: google-fonts
+        with:
+          test-name: "Google Fonts Import"
+          command: |
+            grep -r "fonts.googleapis.com" . --include="*.html" | wc -l | grep -v "^0$"
+          comparison-method: includes
+          timeout: 10
+
+      # --- STYLING CHECKS ---
+      - name: Verify color palette usage
+        uses: classroom-resources/autograding-io-grader@v1
+        id: colors
+        with:
+          test-name: "Color Styling Applied"
+          command: |
+            grep -r "color:.*(#|rgb|hsl)" styles.css | wc -l | grep -v "^0$"
+          comparison-method: includes
+          timeout: 10
+
+      - name: Check navigation styling
+        uses: classroom-resources/autograding-io-grader@v1
+        id: nav-styles
+        with:
+          test-name: "Navigation Styling"
+          command: |
+            grep -r "nav.*{.*}" styles.css | wc -l | grep -v "^0$"
+          comparison-method: includes
+          timeout: 10
+
+      - name: Verify responsive units
+        uses: classroom-resources/autograding-io-grader@v1
+        id: responsive-units
+        with:
+          test-name: "Responsive Units Usage"
+          command: |
+            grep -r "rem\|%\|vw\|vh" styles.css | wc -l | grep -v "^0$"
+          comparison-method: includes
+          timeout: 10
+
+      # --- LAYOUT CHECKS ---
+      - name: Check flex/grid usage
+        uses: classroom-resources/autograding-io-grader@v1
+        id: layout-methods
+        with:
+          test-name: "Modern Layout Techniques"
+          command: |
+            grep -r "display:.*flex\|display:.*grid" styles.css | wc -l | grep -v "^0$"
+          comparison-method: includes
+          timeout: 10
+
+      - name: Verify form styling
+        uses: classroom-resources/autograding-io-grader@v1
+        id: form-styles
+        with:
+          test-name: "Form Element Styling"
+          command: |
+            grep -r "input.*{.*}\|textarea.*{.*}\|select.*{.*}" styles.css | wc -l | grep -v "^0$"
+          comparison-method: includes
+          timeout: 10
+
+      # --- REPORT RESULTS ---
+      - name: Autograding Reporter
+        uses: classroom-resources/autograding-grading-reporter@v1
+        env:
+          CSS-EXISTS_RESULTS: "${{ steps.css-exists.outputs.result }}"
+          GOOGLE-FONTS_RESULTS: "${{ steps.google-fonts.outputs.result }}"
+          COLORS_RESULTS: "${{ steps.colors.outputs.result }}"
+          NAV-STYLES_RESULTS: "${{ steps.nav-styles.outputs.result }}"
+          RESPONSIVE-UNITS_RESULTS: "${{ steps.responsive-units.outputs.result }}"
+          LAYOUT-METHODS_RESULTS: "${{ steps.layout-methods.outputs.result }}"
+          FORM-STYLES_RESULTS: "${{ steps.form-styles.outputs.result }}"
