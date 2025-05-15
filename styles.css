@@ -42,3 +42,28 @@ nav a:hover {
   color: var(--secondary-color);
   border-bottom: 2px solid var(--secondary-color);
 }
+nav ul ul {
+  display: none;
+  position: absolute;
+  background-color: var(--accent-color);
+  padding: 0.5rem;
+  border-radius: 5px;
+  z-index: 100;
+}
+
+nav li {
+  position: relative;
+}
+
+nav li:hover > ul {
+  display: block;
+}
+
+nav ul ul li {
+  margin: 0;
+  padding: 0.5rem;
+}
+
+nav ul ul a {
+  color: white;
+}
