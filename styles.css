@@ -1,14 +1,14 @@
 :root {
-  --primary-color: #8B0000;
-  --secondary-color: #FFD700;
-  --accent-color: #8B4513;
-  --background-color: #8B4513;
-  --text-color: #333;
+  --primary-color: #8B0000; /* Deep red */
+  --secondary-color: #FFB100; /* Warm yellow */
+  --accent-color: #A0522D; /* Earthy brown */
+  --background-color: #FFF5E1; /* Light creamy background */
+  --text-color: #2C1B10; /* Deep brown text */
 }
 
 body {
   font-family: 'Open Sans', sans-serif;
-  background: linear-gradient(to bottom right, #FFF8F0, #FFE4B5);
+  background-color: var(--background-color);
   color: var(--text-color);
   margin: 0;
   padding: 0;
@@ -105,7 +105,7 @@ nav ul ul a {
 
 .featured-dishes {
   padding: 2rem 1rem;
-  background-color: #fff8f0;
+  background-color: var(--background-color);
   border-radius: 10px;
   margin-bottom: 2rem;
 }
@@ -114,15 +114,15 @@ nav ul ul a {
   text-align: center;
   font-size: 2rem;
   margin-bottom: 2rem;
-  color: #c1440e;
+  color: var(--primary-color);
 }
 
 .featured-dishes figure {
   background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  margin: 1rem auto;
-  max-width: 300px;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  margin: 2rem auto;
+  max-width: 400px; /* increased width */
   padding: 1rem;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -130,20 +130,22 @@ nav ul ul a {
 
 .featured-dishes figure:hover {
   transform: scale(1.05);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  box-shadow: 0 10px 18px rgba(0,0,0,0.15);
 }
 
 .featured-dishes img {
   width: 100%;
   height: auto;
-  border-radius: 8px;
+  max-height: 300px; /* increased max height */
+  object-fit: cover;
+  border-radius: 10px;
 }
 
 .featured-dishes figcaption {
   margin-top: 1rem;
-  font-size: 1rem;
-  line-height: 1.4;
-  color: #333;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  color: var(--text-color);
 }
 
 .container {
@@ -168,10 +170,9 @@ button:hover {
   color: var(--primary-color);
 }
 
-/* Optional form element styles */
 input, textarea, select {
   padding: 0.5rem;
-  border: 1px solid #ccc;
+  border: 1px solid var(--accent-color);
   border-radius: 5px;
   width: 100%;
   margin-bottom: 1rem;
@@ -180,5 +181,5 @@ input, textarea, select {
 input:focus, textarea:focus, select:focus {
   border-color: var(--primary-color);
   outline: none;
-  box-shadow: 0 0 5px var(--primary-color);
+  box-shadow: 0 0 5px var(--secondary-color);
 }
