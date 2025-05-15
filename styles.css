@@ -1,9 +1,10 @@
 :root { 
-  --primary-color: #FFB100;        
-  --secondary-color: #3C7A41;      
-  --accent-color: #8B0000;         
-  --background-color: #FFFDF6;     
-  --text-color: #1B1B1B;           
+  --primary-color: #8B0000;        
+  --secondary-color: #FFB100;     
+  --accent-color: #5C4033;         
+  --green-color: #3C7A41;          
+  --background-color: #FFFDF6;    
+  --text-color: #1B1B1B;          
 }
 
 * {
@@ -26,7 +27,6 @@ h1, h2, h3 {
   color: var(--primary-color);
 }
 
-/* Navigation */
 nav ul {
   list-style: none;
   display: flex;
@@ -43,8 +43,8 @@ nav a {
 }
 
 nav a:hover {
-  color: var(--green-color) !important;
-  border-bottom: 3px solid var(--green-color) !important;
+  color: var(--green-color) ;
+  border-bottom: 3px solid var(--green-color) ;
 }
 
 nav li {
@@ -81,14 +81,15 @@ nav ul ul li {
 
 .hero h2 {
   font-size: 2.5rem;
-  color: white !important;
-  background-color: var(--green-color) !important;
+  color: white ;
+  background-color: var(--green-color) ;
   display: inline-block;
   padding: 1rem 2rem;
   border-radius: 12px;
   text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
 }
 
+/* Hero iframe embed */
 .hero iframe {
   width: 100%;
   max-width: 600px;
@@ -132,7 +133,7 @@ nav ul ul li {
   max-width: 600px ;
   height: auto ;
   border-radius: 15px;
-  box-shadow: 0 8px 16px rgba(60, 122, 65, 0.4); /* subtle green shadow */
+  box-shadow: 0 8px 16px rgba(60, 122, 65, 0.4);
   object-fit: cover;
   display: block;
   margin: 0 auto 1.5rem auto;
@@ -144,7 +145,6 @@ nav ul ul li {
   color: var(--text-color);
   text-align: center;
 }
-
 .recipes {
   padding: 2rem;
   background-color: var(--background-color);
@@ -177,16 +177,15 @@ nav ul ul li {
 }
 
 .recipes .recipe-card img {
-  width: 100% !important;
-  max-width: 600px !important;
-  height: auto !important;
+  width: 100% ;
+  max-width: 600px ;
+  height: auto ;
   border-radius: 15px;
   box-shadow: 0 8px 16px rgba(60, 122, 65, 0.4);
   object-fit: cover;
   display: block;
   margin: 0 auto 1rem auto;
 }
-
 .culinary-regions {
   padding: 2rem;
   max-width: 900px;
@@ -234,7 +233,6 @@ nav ul ul li {
   border-radius: 10px;
   margin-top: 1rem;
 }
-
 .contact {
   padding: 2rem;
   max-width: 900px;
