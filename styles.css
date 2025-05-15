@@ -3,20 +3,18 @@
   --secondary-color: #FFB100;      /* Warm yellow */
   --accent-color: #5C4033;         /* Earthy brown */
   --green-color: #3C7A41;          /* Fresh leafy green */
-  --background-color: #FFFDF6;     /* Clean neutral */
+  --background-color: #FFB100;     /* Clean neutral */
   --text-color: #1B1B1B;           /* Strong dark text */
 }
 
-/* Reset any greyish colors */
 * {
-  color: var(--text-color) !important;
-  background-color: transparent !important;
+  color: var(--text-color) ;
+  background-color: transparent ;
 }
 
-/* Body and base font */
 body, html {
-  background-color: var(--background-color) !important;
-  color: var(--text-color) !important;
+  background-color: var(--background-color) ;
+  color: var(--text-color) ;
   margin: 0;
   padding: 0;
   font-family: 'Open Sans', sans-serif;
@@ -24,7 +22,6 @@ body, html {
   line-height: 1.6;
 }
 
-/* Headings */
 h1, h2, h3 {
   font-family: 'Abril Fatface', cursive;
   color: var(--primary-color);
@@ -73,7 +70,6 @@ nav ul ul li {
   padding: 0.5rem;
 }
 
-/* Hero Section */
 .hero {
   background-size: cover;
   background-position: center;
@@ -94,7 +90,6 @@ nav ul ul li {
   text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
 }
 
-/* Hero iframe embed */
 .hero iframe {
   width: 100%;
   max-width: 600px;
@@ -103,7 +98,6 @@ nav ul ul li {
   border-radius: 10px;
 }
 
-/* Featured Dishes Section */
 .featured-dishes {
   padding: 2rem;
   background-color: var(--background-color);
@@ -135,9 +129,9 @@ nav ul ul li {
 }
 
 .featured-dishes img {
-  width: 100% !important;
-  max-width: 600px !important;
-  height: auto !important;
+  width: 100% ;
+  max-width: 600px ;
+  height: auto ;
   border-radius: 15px;
   box-shadow: 0 8px 16px rgba(60, 122, 65, 0.4); /* subtle green shadow */
   object-fit: cover;
@@ -152,7 +146,6 @@ nav ul ul li {
   text-align: center;
 }
 
-/* Recipe Cards Section */
 .recipes {
   padding: 2rem;
   background-color: var(--background-color);
@@ -195,29 +188,6 @@ nav ul ul li {
   margin: 0 auto 1rem auto;
 }
 
-/* Nutritional facts table */
-.nutrition-table {
-  width: 100%;
-  max-width: 600px;
-  margin: 0 auto 2rem auto;
-  border-collapse: collapse;
-  font-size: 1rem;
-  color: var(--text-color);
-}
-
-.nutrition-table th,
-.nutrition-table td {
-  border: 1px solid var(--green-color);
-  padding: 0.5rem 1rem;
-  text-align: left;
-}
-
-.nutrition-table th {
-  background-color: var(--green-color);
-  color: white;
-}
-
-/* Culinary Regions */
 .culinary-regions {
   padding: 2rem;
   max-width: 900px;
@@ -244,7 +214,6 @@ nav ul ul li {
   font-weight: bold;
 }
 
-/* About Us */
 .about-us {
   padding: 2rem;
   max-width: 900px;
@@ -267,7 +236,6 @@ nav ul ul li {
   margin-top: 1rem;
 }
 
-/* Contact Page */
 .contact {
   padding: 2rem;
   max-width: 900px;
@@ -293,7 +261,6 @@ input:focus, textarea:focus, select:focus {
   box-shadow: 0 0 8px var(--green-color);
 }
 
-/* Buttons */
 button {
   background-color: var(--primary-color);
   color: white;
@@ -310,7 +277,6 @@ button:hover {
   color: white;
 }
 
-/* Container helper */
 .container {
   max-width: 1200px;
   margin: 0 auto;
