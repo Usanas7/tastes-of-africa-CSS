@@ -1,10 +1,9 @@
 :root { 
-  --primary-color: #3C7A41;        /* Deep red */
-  --secondary-color: #FFB100;      /* Warm yellow */
-  --accent-color: #5C4033;         /* Earthy brown */
-  --green-color: #FFB100;          /* Fresh leafy green */
-  --background-color: #FFFDF6;     /* Clean neutral */
-  --text-color: #1B1B1B;           /* Strong dark text */
+  --primary-color: #FFB100;        
+  --secondary-color: #3C7A41;      
+  --accent-color: #8B0000;         
+  --background-color: #FFFDF6;     
+  --text-color: #1B1B1B;           
 }
 
 * {
